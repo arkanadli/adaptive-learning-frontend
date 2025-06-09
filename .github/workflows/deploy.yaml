@@ -24,9 +24,10 @@ jobs:
 
       - name: Build & Push to ECR
         env:
-          ECR_REPO: adaptive-frontend
+          ECR_REGISTRY: 137363613479.dkr.ecr.ap-southeast-2.amazonaws.com
+          ECR_REPOSITORY: adaptive-learning-frontend
+          IMAGE_TAG: latest
         run: |
-          IMAGE_TAG=latest
-          docker build -t $ECR_REPO:$IMAGE_TAG .
-          docker tag $ECR_REPO:$IMAGE_TAG ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-southeast-2.amazonaws.com/$ECR_REPO:$IMAGE_TAG
-          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-southeast-2.amazonaws.com/$ECR_REPO:$IMAGE_TAG
+          docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
+          docker tag $ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
