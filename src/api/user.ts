@@ -191,4 +191,4 @@ export async function fetchUsersBySchedule(id: number): Promise<jadwalUser[]> {
 export async function fetchUsersByIdAll(id: number): Promise<User> {
   const res = await API.get(`/users/all/${id}`);
   return res.data;
-}
+} 
