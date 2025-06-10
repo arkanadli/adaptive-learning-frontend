@@ -60,6 +60,7 @@ export default function ManageUsers() {
   });
 
   const columns: GridColDef[] = [
+    { field: 'no', headerName: 'No.', width: 70, headerAlign: 'center', align: 'center' },
     { field: 'id', headerName: 'ID', width: 70, headerAlign: 'center', align: 'center' },
     { field: 'name', headerName: 'Name', flex: 1, headerAlign: 'center', align: 'center' },
     { field: 'email', headerName: 'Email', flex: 1, headerAlign: 'center', align: 'center' },
@@ -99,8 +100,10 @@ export default function ManageUsers() {
     },
   ];
 
-  const rows = users.map((u) => {
+  const rows = users.map((u,index) => {
     return {
+        
+        no: index +1,
         id: u.id,
         name: u.name,
         email: u.email,

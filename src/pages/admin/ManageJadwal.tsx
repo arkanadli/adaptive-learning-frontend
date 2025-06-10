@@ -74,6 +74,7 @@ export default function ManageJadwals() {
   });
 
   const columns: GridColDef[] = [
+    { field: 'no', headerName: 'No.', width: 70, headerAlign: 'center', align: 'center' },
     { field: 'id', headerName: 'ID', width: 70, headerAlign: 'center', align: 'center' },
     { field: 'kelas', headerName: 'Kelas', flex: 0.5, headerAlign: 'center', align: 'center' },
     { field: 'code', headerName: 'Kode', flex: 0.5, headerAlign: 'center', align: 'center' },
@@ -113,8 +114,9 @@ export default function ManageJadwals() {
     },
   ];
 
-  const rows = jadwal.map((j) => {
+  const rows = jadwal.map((j,index) => {
     return {
+        no: index +1,
         id: j.id,
         kelas: j.kelas.name,
         code: j.subject.code,

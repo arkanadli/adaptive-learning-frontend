@@ -117,9 +117,10 @@ export default function ManageEnrollments() {
       .finally(() => setLoading(false));
   }, []);
 
-  const rows = enrollment.map((e) => {
+  const rows = enrollment.map((e,index) => {
     const j = e.jadwal;
     return {
+      no: index +1,
       id: e.id,
       user: e.user.name,
       kelas: j.kelas.name,
@@ -134,6 +135,7 @@ export default function ManageEnrollments() {
   });
 
   const columns: GridColDef[] = [
+    { field: 'no', headerName: 'No.', width: 70, headerAlign: 'center', align: 'center' },
     { field: "id", headerName: "ID", width: 70, headerAlign: "center", align: "center" },
     { field: "user", headerName: "Siswa", flex: 1.25, headerAlign: "center", align: "center" },
     { field: "kelas", headerName: "Kelas", flex: 0.5, headerAlign: "center", align: "center" },

@@ -35,6 +35,7 @@ export default function ManageRoles() {
   const [formData, setFormData] = useState({ name: "" });
 
   const columns: GridColDef[] = [
+    { field: 'no', headerName: 'No.', width: 70, headerAlign: 'center', align: 'center' },
     { field: 'id', headerName: 'ID', width: 70, headerAlign: 'center', align: 'center' },
     { field: 'name', headerName: 'Nama Roles', flex: 1, headerAlign: 'center', align: 'center' },
     {
@@ -68,8 +69,9 @@ export default function ManageRoles() {
     },
   ];
 
-  const rows = Role.map((r) => {
+  const rows = Role.map((r,index) => {
     return {
+        no: index +1,
         id: r.id,
         name: r.name,
         original: r,

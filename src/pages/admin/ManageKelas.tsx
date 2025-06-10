@@ -35,6 +35,7 @@ export default function ManageKelas() {
   const [formData, setFormData] = useState({ name: "" });
 
   const columns: GridColDef[] = [
+    { field: 'no', headerName: 'No.', width: 70, headerAlign: 'center', align: 'center' },
     { field: 'id', headerName: 'ID', width: 70, headerAlign: 'center', align: 'center' },
     { field: 'name', headerName: 'Nama Kelas', flex: 1, headerAlign: 'center', align: 'center' },
     {
@@ -68,8 +69,9 @@ export default function ManageKelas() {
     },
   ];
 
-  const rows = kelas.map((k) => {
+  const rows = kelas.map((k, index) => {
     return {
+        no: index +1,
         id: k.id,
         name: k.name,
         original: k,

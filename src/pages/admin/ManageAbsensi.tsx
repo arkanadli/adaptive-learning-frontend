@@ -57,6 +57,7 @@ export default function ManageAbsensis() {
   });
 
   const columns: GridColDef[] = [
+    { field: 'no', headerName: 'No.', width: 70, headerAlign: 'center', align: 'center' },
     { field: 'id', headerName: 'ID', width: 50, headerAlign: 'center', align: 'center' },
     { field: 'user', headerName: 'Siswa', flex: 1.1, headerAlign: 'center', align: 'center' },
     { field: 'kelas', headerName: 'Kelas', flex: 0.4, headerAlign: 'center', align: 'center' },
@@ -99,11 +100,12 @@ export default function ManageAbsensis() {
     },
   ];
 
-  const rows = absensi.map((a) => {
+  const rows = absensi.map((a,index) => {
     const jadwalUser = a.jadwal_user;
     const jadwal = jadwalUser.jadwal;
     const user = jadwalUser.user;
     return {
+        no: index +1,
         id: a.id,
         user: user.name,
         kelas: jadwal.kelas.name,

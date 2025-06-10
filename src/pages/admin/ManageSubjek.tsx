@@ -39,6 +39,7 @@ export default function ManageSubjek() {
   });
 
   const columns: GridColDef[] = [
+    { field: 'no', headerName: 'No.', width: 70, headerAlign: 'center', align: 'center' },
     { field: 'id', headerName: 'ID', width: 70, headerAlign: 'center', align: 'center' },
     { field: 'name', headerName: 'Nama', flex: 2, headerAlign: 'center', align: 'center' },
     { field: 'code', headerName: 'Kode', flex: 1, headerAlign: 'center', align: 'center' },
@@ -74,8 +75,9 @@ export default function ManageSubjek() {
     },
   ];
 
-  const rows = Subjek.map((s) => {
+  const rows = Subjek.map((s,index) => {
     return {
+        no: index +1,
         id: s.id,
         name: s.name,
         code: s.code,
