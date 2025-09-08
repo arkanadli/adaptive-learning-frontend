@@ -1,44 +1,35 @@
-📚 Adaptive Learning Platform
+# 📚 Adaptive Learning Platform
 
-A web-based learning platform designed for elementary school students, providing personalized study materials, progress tracking, and interactive learning experiences.
+A **web-based learning platform** designed for elementary school students, providing **personalized study materials**, **progress tracking**, and **interactive learning experiences**.  
 Built with a modern full-stack architecture to ensure scalability, performance, and easy deployment.
 
-🚀 Features
+---
 
-📖 Personalized Learning – Adaptive study materials tailored to each student’s progress.
+## ✨ Features
 
-📊 Progress Tracking – Monitor learning outcomes with dynamic dashboards.
+- 📖 **Personalized Learning** – Adaptive study materials tailored to each student’s progress  
+- 📊 **Progress Tracking** – Monitor learning outcomes with dynamic dashboards  
+- 👩‍🏫 **Role-based Access** – Separate modules for teachers and students  
+- 🔐 **Secure Authentication** – User login with Laravel Sanctum  
+- ☁️ **Cloud-Ready Deployment** – Dockerized setup, deployable on AWS  
 
-👩‍🏫 Teacher & Student Modules – Role-based access for different users.
+---
 
-🔐 Secure Authentication – User login and session management.
+## 🛠 Tech Stack
 
-☁️ Cloud-Ready Deployment – Dockerized app, deployable on AWS.
+**Frontend**
+- React.js  
+- Tailwind CSS  
 
-🛠️ Tech Stack
+**Backend**
+- Laravel 10 + Sanctum  
+- RESTful API  
 
-Frontend
+**Database & Cloud**
+- MySQL  
+- AWS (EC2, RDS, S3)  
+- Docker  
 
-React.js
-
-Tailwind CSS
-
-Backend
-
-Laravel (with Sanctum for authentication)
-
-RESTful API
-
-Database & Cloud
-
-MySQL
-
-AWS (EC2, RDS, S3)
-
-Docker
-
-Other Tools
-
-GitHub Actions (CI/CD)
-
-Nginx for server configuration
+**Tools**
+- GitHub Actions (CI/CD)  
+- Nginx  
